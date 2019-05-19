@@ -1,0 +1,16 @@
+{
+  "extends": "./tsconfig.base",
+  "compilerOptions": {
+    "outDir": "dist",
+    "jsx": "react",
+    "baseUrl": ".",
+  },
+  "typeRoots": [
+    "/node_modules/@types",
+    "/src/types"
+  ],
+  "include": [
+    "./**/*",
+    "../../cayde-server/**/*"
+  ]
+}
