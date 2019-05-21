@@ -1,21 +1,21 @@
 // Require the framework and instantiate it
-import cayde, { handle } from '../../cayde-server';
-import koaStatic from 'koa-static';
 import 'isomorphic-fetch';
+import CaydeServer, { handle, hot } from '../../cayde-server';
+import koaStatic from 'koa-static';
 import path from 'path';
 import { config as envConfig } from 'dotenv';
 
 envConfig();
+const cayde = new CaydeServer();
 
-cayde(module, (server) => {
-    server.use(koaStatic(path.join(process.cwd(), 'dist')));
-    console.log('CAYDE FUNCTOIN');
-    server.use(async (ctx) => {
-        console.log('hello!!');
-        await handle(ctx);
 
-        return;
-    });
+cayde.use(koaStatic(path.join(process.cwd(), 'dist')));
+cayde.use(async ctx => {
+  console.log('hello!!');
+  await handle(ctx);
 
-    return server;
+  return;
 });
+
+export default hot(module, cayde);
+

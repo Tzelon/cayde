@@ -54,7 +54,7 @@ const nodePaths = (process.env.NODE_PATH || '')
     .map(resolveApp);
 
 module.exports = {
-    appServerIndexJs: resolveApp('server.ts'),
+    appServerIndexJs: resolveApp('index.ts'),
     appClientIndexJs: resolveOwn('cayde-client/client.ts'),
     appRootDir: resolveApp('.'),
     // dotenv: resolveApp('.env'),
