@@ -26,13 +26,14 @@ const default_config = (isNode) => {
                 react: require.resolve('react'),
                 'react-dom': require.resolve('@hot-loader/react-dom')
             },
-            extensions: ['.ts', '.tsx', '.js', '.json'],
+            // .mjs must be first because graphql module https://github.com/apollographql/graphql-tag/issues/155
+            extensions: ['.mjs', '.ts', '.tsx', '.js', '.json'],
             plugins: [
                 //This is important for monorepo resolve modules
                 new TsconfigPathsPlugin({
                     configFile: path.resolve('./tsconfig.json'),
                     logLevel: 'info',
-                    extensions: ['.ts', '.js', '.tsx']
+                    extensions: ['.mjs', '.ts', '.js', '.tsx']
                 })
             ]
         },

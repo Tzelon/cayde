@@ -64,8 +64,10 @@
   },
   "dependencies": {
     "@babel/runtime": "^7.4.4",
+    "@types/graphql": "^14.2.0",
+    "apollo-server": "^2.5.1",
     "dotenv": "^8.0.0",
-    "graphql": "^14.3.0",
+    "graphql": "^14.3.1",
     "graphql-hooks": "^3.5.0",
     "graphql-hooks-memcache": "^1.2.0",
     "graphql-hooks-ssr": "^1.1.1",
